@@ -1,22 +1,13 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-}
-
-.full {
-  width: 100%;
-  height: 100%;
+  background-color: #121212;
+  color: white;
 }
 
 .center {
   width: 40%;
-
   margin-left: 25%;
-}
-
-.darkmode {
-  background-color: #121212;
-  color: white;
 }
 
 h2 {
