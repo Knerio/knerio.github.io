@@ -11,7 +11,9 @@ export default function App() {
         fetch("https://raw.githubusercontent.com/knerio/knerio/main/README.md")
             .then(response => response.text()
             ).then((value: string) => {
-            setMD(marked.parse(value))
+                value.then(a => {
+                    setMD(marked.parse(value))
+                })
         })
     }, []);
 
