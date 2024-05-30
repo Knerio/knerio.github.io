@@ -19,7 +19,7 @@ export default function App() {
 
 
     return <>
-        <div>
+        <div className={"markdown"}>
             <div dangerouslySetInnerHTML={{__html: md}}/>
         </div>
     </>

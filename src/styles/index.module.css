@@ -1,33 +1,13 @@
-body {
+.markdown {
     background-color: #121212;
     width: 40%;
     color: white;
     margin-left: 25%;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-}
-
-.container {
     max-width: 800px;
     padding: 20px;
     background: #1e1e1e;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
-}
-
-h2 {
-    color: #ffffff;
-}
-
-a {
-    color: #1e90ff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.badges img {
-    margin: 5px;
 }
