@@ -1,3 +1,8 @@
+---
+title: my home page title
+layout
+---
+
 <h2>Hello Im Dario</h2>
 
 **Nice to see you here**
