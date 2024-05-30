@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client"
 
 import {useEffect, useState} from "react";
@@ -11,9 +12,7 @@ export default function App() {
         fetch("https://raw.githubusercontent.com/knerio/knerio/main/README.md")
             .then(response => response.text()
             ).then((value: string) => {
-                value.then(a => {
-                    setMD(marked.parse(value))
-                })
+            setMD(marked.parse(value))
         })
     }, []);
 
