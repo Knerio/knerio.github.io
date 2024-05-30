@@ -1,8 +1,8 @@
 .test {
-    background-color: #121212;
-    width: 40%;
-    color: white;
-    margin-left: 25%;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background-color: #121212 !important;
+    width: 40% !important;
+    color: white !important;
+    margin-left: 25% !important;
+    font-family: Arial, sans-serif !important;
+    line-height: 1.6 !important;
 }
