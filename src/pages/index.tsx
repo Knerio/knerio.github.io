@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {marked} from "marked";
 
 export default function App() {
-    const [md, setMD] = useState("");
+    const [md, setMD] = useState<string>("");
 
 
     useEffect(() => {
