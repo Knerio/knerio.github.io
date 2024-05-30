@@ -18,8 +18,8 @@ export default function App() {
 
 
     return <>
-        <div className={"center darkmode"}>
-            <div dangerouslySetInnerHTML={{__html: md}}/>
+        <div className={"center"}>
+            <div className={"darker"} dangerouslySetInnerHTML={{__html: md}}/>
         </div>
     </>
 }

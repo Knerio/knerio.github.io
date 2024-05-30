@@ -10,6 +10,11 @@ body {
   margin-left: 25%;
 }
 
+.darker {
+  background-color: #021b33;
+  color: white;
+}
+
 h2 {
   color: #ffffff;
 }
