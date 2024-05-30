@@ -3,7 +3,7 @@
 
 import {useEffect, useState} from "react";
 import {marked} from "marked";
-import '../styles/globals.css';
+import '../styles/index.module.css';
 
 export default function App() {
     const [md, setMD] = useState<string>("");
