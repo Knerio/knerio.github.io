@@ -19,7 +19,16 @@ export default function App() {
 
 
     return <>
-        <div className={"markdown"}>
+        <div style="
+            background-color: #121212;
+            width: 40%;
+            color: white;
+            margin-left: 25%;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        "
+
+        >
             <div dangerouslySetInnerHTML={{__html: md}}/>
         </div>
     </>
