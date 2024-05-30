@@ -19,7 +19,7 @@ export default function App() {
 
     return <>
         <div className={"center"}>
-            <div className={"darker"} dangerouslySetInnerHTML={{__html: md}}/>
+            <div dangerouslySetInnerHTML={{__html: md}}/>
         </div>
     </>
 }
