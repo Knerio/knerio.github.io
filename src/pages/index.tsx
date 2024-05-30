@@ -10,7 +10,7 @@ export default function App() {
     useEffect(() => {
         fetch("https://raw.githubusercontent.com/knerio/knerio/main/README.md")
             .then(response => response.text()
-            ).then((value: any) => {
+            ).then((value: string) => {
             setMD(marked.parse(value))
         })
     }, []);
