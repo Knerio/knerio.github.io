@@ -18,7 +18,7 @@ export default function App() {
 
 
     return <>
-        <div className={"darkmode"}>
+        <div className={"darkmode full"}>
             <div className={"center darkmode"}>
                 <div dangerouslySetInnerHTML={{__html: md}}/>
             </div>
