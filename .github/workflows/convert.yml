@@ -1,0 +1,35 @@
+name: Update Index
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to trigger the action on
+
+permissions: write-all
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: main  # Ensure we are on the correct branch
+
+      - name: Fetch README.md from Knerio/Knerio
+        run: |
+          curl -o README.md https://raw.githubusercontent.com/Knerio/Knerio/main/README.md
+
+      - name: Convert README.md to index.html
+        run: |
+          pandoc README.md -f markdown -t html -s -o index.html
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git checkout -b update-readme-with-latest-version
+          git add index.html
+          git commit -m "Update README with latest version ${{ env.RELEASE_TAG }}"
+          git push --force origin update-readme-with-latest-version:main
