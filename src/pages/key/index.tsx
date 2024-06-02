@@ -8,7 +8,7 @@ export default function App() {
 
 
     useEffect(() => {
-        fetch("https://raw.githubusercontent.com/knerio/knerio/main/public/PUBLIC_KEY.txt")
+        fetch("https://raw.githubusercontent.com/knerio/knerio.github.io/main/public/PUBLIC_KEY.txt")
             .then(response => response.text()
             ).then((value: string) => {
             setMD(value)
