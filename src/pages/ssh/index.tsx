@@ -2,11 +2,25 @@
 "use client"
 
 
-export default function App() {
+import {useEffect, useState} from "react";
+import {marked} from "marked";
 
-    window.location.replace("https://raw.githubusercontent.com/Knerio/knerio.github.io/main/public/id_rsa.pub")
+export default function App() {
+    const [content, setContent] = useState<string>("");
+
+
+    useEffect(() => {
+        fetch("https://raw.githubusercontent.com/Knerio/knerio.github.io/main/public/id_rsa.pub")
+            .then(response => response.text()
+            ).then((value: string) => {
+            setContent(value)
+        })
+    }, []);
+
 
     return <>
-        REDIRECTING
+        <div className={"center"}>
+            <div>{content}</div>
+        </div>
     </>
 }

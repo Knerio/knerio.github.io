@@ -2,11 +2,24 @@
 "use client"
 
 
-export default function App() {
+import {useEffect, useState} from "react";
 
-    twindow.location.replace("https://raw.githubusercontent.com/Knerio/knerio.github.io/main/public/public.asc")
+export default function App() {
+    const [content, setContent] = useState<string>("");
+
+
+    useEffect(() => {
+        fetch("https://raw.githubusercontent.com/Knerio/knerio.github.io/main/public/public.asc")
+            .then(response => response.text()
+            ).then((value: string) => {
+            setContent(value)
+        })
+    }, []);
+
 
     return <>
-        REDIRECTING
+        <div className={"center"}>
+            <div>{content}</div>
+        </div>
     </>
 }
