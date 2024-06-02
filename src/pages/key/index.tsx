@@ -17,8 +17,6 @@ export default function App() {
 
 
     return <>
-        <div className={"center"}>
-            <div>{md}</div>
-        </div>
+        <div>{md}</div>
     </>
 }
