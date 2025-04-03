@@ -1,9 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function ColorConverter() {
+    const router = useRouter();
     const [rgb, setRgb] = useState({ r: 255, g: 255, b: 255 });
     const [hex, setHex] = useState("#ffffff");
     const [color, setColor] = useState("#ffffff");
+
+    useEffect(() => {
+        const queryColor = router.query.color as string;
+        if (queryColor && /^#([0-9A-F]{6})$/i.test(queryColor)) {
+            setHex(queryColor);
+            setRgb(hexToRgb(queryColor));
+            setColor(queryColor);
+        }
+    }, [router.query.color]);
+
+    const updateUrl = (newHex) => {
+        router.push({
+            pathname: router.pathname,
+            query: { color: newHex },
+        }, undefined, { shallow: true });
+    };
 
     const rgbToHex = (r, g, b) => {
         return "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1).toUpperCase();
@@ -29,6 +47,7 @@ export default function ColorConverter() {
         const hexValue = rgbToHex(newRgb.r, newRgb.g, newRgb.b);
         setHex(hexValue);
         setColor(hexValue);
+        updateUrl(hexValue);
     };
 
     const handleHexChange = (e) => {
@@ -37,6 +56,7 @@ export default function ColorConverter() {
             setHex(value);
             setRgb(hexToRgb(value));
             setColor(value);
+            updateUrl(value);
         } else {
             setHex(value);
         }
@@ -46,6 +66,7 @@ export default function ColorConverter() {
         setHex(e.target.value);
         setRgb(hexToRgb(e.target.value));
         setColor(e.target.value);
+        updateUrl(e.target.value);
     };
 
     return (
